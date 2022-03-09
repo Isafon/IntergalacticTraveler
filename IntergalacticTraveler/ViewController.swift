@@ -10,7 +10,22 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBAction func whenBlueDwarfButtonTapped(_ sender: UIButton) {
+       performSegue(withIdentifier: "mySegue", sender: nil)
+        
+        
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let nvc = segue.destination as! StarViewController
+        
+        if sender == nil{
+            nvc.starName = "BlueDwarf"
+        } else {
+            nvc.starName = "RedDwarf"
+        }
+    }
+    
+ 
     
     
     override func viewDidLoad() {

@@ -8,9 +8,19 @@
 import UIKit
 
 class StarViewController: UIViewController {
-
+    
+    @IBOutlet weak var starImageView: UIImageView!
+    var starName = String()
+    
+   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        //print(starName)
+       
+        let randomNumber = Int.random(in: 1...3)
+        starImageView.image = UIImage(named: "\(starName)\(randomNumber)")
+        
 
         // Do any additional setup after loading the view.
     }
